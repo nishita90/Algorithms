@@ -12,8 +12,8 @@ std::string strRev(std::string str)
     for (int i =0; i< length/2 ; i++)
     {
         str[i] = str[i] ^ str[length - 1 - i];
-        str[length -1 -i] = str[i] ^ str[length - 1 -i];
-        str[i] = str[i] ^ str[length - 1 -i ];
+        str[length - 1 - i] = str[i] ^ str[length - 1 - i];
+        str[i] = str[i] ^ str[length - 1 - i ];
     }
     return str;
 }
