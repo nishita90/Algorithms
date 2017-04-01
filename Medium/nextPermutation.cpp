@@ -35,7 +35,7 @@ int main() {
       // find the right most value exceeding array[i]
       int j = words.length() - 1;
       while(j > i && words[j] <= words[i-1]) // why the '=' condition?
-	j--;
+          j--;
       // now swap a[i-1] and a[j]
       words[i-1] = words[i-1] ^ words[j];
       words[j]   = words[i-1] ^ words[j];
