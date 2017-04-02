@@ -32,9 +32,26 @@ public:
 class Solution {
 public:
     vector<int> countBits(int num) {
-        std::vector<int> res(num+1);
-        for(int i=0; i<= num; i++){
+        std::vector<int> res(num+1,0);
+        for(int i=1; i<= num; i++){
             res.at(i) = 1 + res.at(i & (i-1));
+        }
+        return res;
+    }
+
+};
+
+// This is w/o using builtin functions of bitset. Also using even odd
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        std::vector<int> res(num+1,0);
+        if(num == 0)
+            return res;
+        res.at(1) = 1;
+        for(int i=2; i<= num; i++){
+            res.at(i) = res.at(i >> 1) + (i&1); // i>>1 : right shift operator = (i/2)
+                                                // i&1 = 1 for odd and 0 for even.
         }
         return res;
     }
