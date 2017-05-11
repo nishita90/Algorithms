@@ -1,19 +1,24 @@
 /*
-BFS : Iterative method of traversal
+BFS : Iterative method of traversal of binary tree
+list nodes_to_visit = {root};
+while( nodes_to_visit isn't empty ) {
+  currentnode = nodes_to_visit.take_first();
+  nodes_to_visit.append( currentnode.children );
+  //do something
+}
 */
-/*
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
+
+// Definition for a binary tree node.
+  struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  };
 
  class Solution {
 public:
-    vector<int> largestValues(TreeNode* root) {
+    vector<int> bfs_traversal(TreeNode* root) {
         std::queue<TreeNode*> q; std::vector<int> res;
         q.push(root);
         while(!q.empty() && root != NULL){
