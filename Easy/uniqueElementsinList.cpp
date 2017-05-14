@@ -7,6 +7,7 @@ except any that also appear in L2.
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <unordered_set>
 
 int main()
 {
@@ -16,16 +17,20 @@ int main()
     std::vector<int> L1;
     std::vector<int> L2;
     std::vector<int> L3;
-    L1.push_back(1);
-    L1.push_back(2);
-    L1.push_back(3);
-    L1.push_back(4);
+    // L1.push_back(1);
+    // L1.push_back(2);
+    // L1.push_back(3);
+    // L1.push_back(4);
     L1.push_back(5);
+    L1.push_back(9);
 
+    L2.push_back(1);
     L2.push_back(2);
-    L2.push_back(5);
     L2.push_back(3);
-    L2.push_back(7);
+    L2.push_back(2);
+    L2.push_back(2);
+    L2.push_back(2);
+
     //This is O(n^2)
     // for (int p  : L1)
     // {
@@ -47,15 +52,33 @@ int main()
 
 
     // O(nlogn) complexity
-    std::sort(L1.begin(), L1.end());
-    std::sort(L2.begin(), L2.end());
-    int count = 0;
-    for (int i = 0; i<L1.size(); i++)
+    // std::sort(L1.begin(), L1.end());
+    // std::sort(L2.begin(), L2.end());
+    // int p=0; int q=0;
+    // int len1 = L1.size(); int len2= L2.size();
+    // while(p<len1 && q<len2)
+    // {
+    //   if(L1[p] < L2[q])
+    //     L3.push_back(L1[p++]);
+    //   else if(L1[p] == L2[q])
+    //     {
+    //       while(L1[p] == L2[p])
+    //         q++;
+    //       }
+    //   else if (L1[p] > L2[q])
+    //   {
+    //     //Do something
+    //   }
+    // }
+
+    // Set L2 to unordered_set() O(n)
+    //Constant time
+    std::unordered_set<int>L_2(L2.begin(), L2.end());
+    for(std::vector<int>::iterator it= L1.begin(); it<L1.end(); it++)
     {
-      if(L1[i] < L2[count])
-        L3.push_back(L1[i]);
-      if(L1[i] == L2[count])
-        count++;
+      //This search is Constant time
+      if(L_2.find(*it) == L_2.end())
+        L3.push_back(*it);
     }
     std::cout << '\n';
     for (int n : L3)
