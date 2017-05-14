@@ -21,6 +21,7 @@ int main() {
     std::cin >> curr_string;
     strings.push_back(curr_string);
   }
+  //Check for all strings S_i from stdin
   for(std::vector<std::string>::iterator iter=strings.begin(); iter != strings.end(); iter++){
     curr_string = *iter;
     int length = curr_string.length();
