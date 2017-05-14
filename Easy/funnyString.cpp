@@ -1,5 +1,7 @@
 /*
-Suppose you have a String,S, of length N that is indexed from 0 to N-1. You also have some String,R , that is the reverse of String S. S is funny if the condition |S(i) - S(i-1)| = |R(i) - R(i-1)|  is true for every character from  to 1 to N-1.
+Suppose you have a String,S, of length N that is indexed from 0 to N-1.
+You also have some String,R , that is the reverse of String S.
+S is funny if the condition |S(i) - S(i-1)| = |R(i) - R(i-1)|  is true for every character from  to 1 to N-1.
 */
 #include <cmath>
 #include <cstdio>
@@ -25,15 +27,13 @@ int main() {
     int i = length - 1, count=0;
     while(i > 0){
       if(abs(curr_string[i] - curr_string[i-1]) == abs(curr_string[length-i-1] - curr_string[length-i]))
-	count++;
+	     count++;
       i--;
     }
     if(count == (length-1))
       std::cout<<"Funny"<<std::endl;
     else
       std::cout<<"Not Funny"<<std::endl;
-
-
   }
   return 0;
 }

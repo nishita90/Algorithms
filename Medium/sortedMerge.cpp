@@ -23,7 +23,7 @@ int* sortedMerge (int arr1[] , int arr2[], int len1, int len2)
       else
 	      arr3[k++] = arr2[q++];
     }
-  //Loop over the remaining elements  
+  //Loop over the remaining elements
   while(p < len1)
     arr3[k++] = arr1[p++];
 

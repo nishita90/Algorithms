@@ -39,7 +39,7 @@ Output:
          int leftMostVal = root->val;
          std::queue<TreeNode*> bfs_q;
          bfs_q.push(root);
-         while(!bfs_q.empty() && root != NULL){
+         while(!bfs_q.empty()){
              TreeNode* temp = bfs_q.front(); bfs_q.pop();
              if(temp->right != NULL) {
                  bfs_q.push(temp->right);

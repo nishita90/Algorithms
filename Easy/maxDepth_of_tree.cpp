@@ -22,11 +22,8 @@ public:
   int maxDepth(TreeNode* root){
     if(root == NULL)
       return 0;
-
-    // Base case : Leaf Node. This accounts for height = 1.
-    if (root->left == NULL && root->right == NULL)
-         return 1;
-    else{
+    else
+    {
       // Compute the depth of each subtree
       int leftDepth  = maxDepth(root->left);
       int rightDepth = maxDepth(root->right);
