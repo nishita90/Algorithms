@@ -54,6 +54,7 @@ int main(){
         int k;
         cin >> n >> k;
         std::vector<int> perm(n);
+        //Initializing values in perm with value = index(since its from begin to end with step 1).
         std::iota(perm.begin(), perm.end(), 1);
         //Consider special cases
         if(k == 0){
