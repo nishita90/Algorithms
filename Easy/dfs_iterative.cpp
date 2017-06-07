@@ -20,7 +20,7 @@ class Solution{
 public:
   vector<int> dfs_traversal(TreeNode* root){
     if (root == NULL)
-      return 0
+      return {};
     std::vector<int> res;
     std::stack<TreeNode*> dfs_stack;
     dfs_stack.push(root);

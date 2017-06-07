@@ -43,7 +43,7 @@ struct node* sortedMerge_recur(struct node* a , struct node* b)
     }
     else{
       result = b;
-      head = resutl;
+      head = result;
       b = b->next;
     }
 
@@ -61,7 +61,7 @@ struct node* sortedMerge_recur(struct node* a , struct node* b)
       result = result->next;
     }
     while (a != NULL)
-      result-> = a;
+      result->next = a;
     while (b != NULL)
       result->next = b;
 

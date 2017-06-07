@@ -19,9 +19,11 @@ while( nodes_to_visit isn't empty ) {
  class Solution {
 public:
     vector<int> bfs_traversal(TreeNode* root) {
+      if(root == NULL)
+        return {};
         std::queue<TreeNode*> q; std::vector<int> res;
         q.push(root);
-        while(!q.empty() && root != NULL){
+        while(!q.empty() ) //&& root != NULL){
               TreeNode *temp = q.front();
               q.pop();
               std::cout<<" "<<temp->val<<std::endl;
